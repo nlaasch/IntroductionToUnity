@@ -23,6 +23,7 @@ public class MapGenerator : MonoBehaviour {
 
     public int seed;
     public Vector2 offset;
+    
 
     public Vector2 falloffVariables = new Vector2(3,2.2f);
     public bool useFalloff;
@@ -42,6 +43,7 @@ public class MapGenerator : MonoBehaviour {
     private void Awake()
     {
         falloffMap = FalloffGenerator.GenerateFalloffMap(mapChunkSize, falloffVariables.x, falloffVariables.y);
+        seed = SeedHolder.seed;
         GenerateMap();
     }
     
